@@ -16,90 +16,35 @@ def gradepoints(grade):
     if grade == 'B' or grade == 'b':
         points += 6
         return points
+    if grade == 'U' or grade == 'u':
+        points += 0
+        return points
+
+
+def checkInputValue(subcode, subcredit, subName):
+     while True:
+        try:
+            subcode = float(gradepoints(input("Enter Your Grade For " + subName)))
+        except TypeError:
+            print("Invalid Input Please Enter Appropriate Value !!!")
+            continue
+        else:
+            break
+     subcode = subcode * subcredit
+     return subcode
 
 
 def gpacalsem1():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 1....\n")
 
-    while True:
-        try:
-            hs8151 = float(gradepoints(input("Enter Your Grade For Communicative English (HS8151) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    hs8151 = hs8151 * 4
-
-    while True:
-        try:
-            ma8151 = float(gradepoints(input("Enter Your Grade For Engineering Mathematics - 1(MA8151) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ma8151 = ma8151 * 4
-
-    while True:
-        try:
-            ph8151 = float(gradepoints(input("Enter Your Grade For Engineering Physics (PH8151) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ph8151 = ph8151 * 3
-
-    while True:
-        try:
-            cy8151 = float(gradepoints(input("Enter Your Grade For Engineering Chemistry (CY8151) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    cy8151 = cy8151 * 3
-
-    while True:
-        try:
-            ge8151 = float(gradepoints(input("Enter Your Grade For Problem Solving and Python Programming (GE8151) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ge8151 = ge8151 * 3
-
-    while True:
-        try:
-            ge8152 = float(gradepoints(input("Enter Your Grade For Engineering Graphics (GE8152) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ge8152 = ge8152 * 4
-
-    while True:
-        try:
-            ge8161 = float(gradepoints(input("Enter Your Grade For Problem Solving and Python Programming Laboratory (GE8161) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ge8161 = ge8161 * 2
-
-    while True:
-        try:
-            bs8161 = float(gradepoints(input("Enter Your Grade For Physics and Chemistry Lab (BS8161) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    bs8161 = bs8161 * 2
+    hs8151 = checkInputValue("hs8151", 4, "Communicative English (HS8151) :")
+    ma8151 = checkInputValue("ma8151", 4, "Engineering Mathematics - 1(MA8151) :")
+    ph8151 = checkInputValue("ph8151", 3, "Engineering Physics (PH8151) :")
+    cy8151 = checkInputValue("cy8151", 3, "Engineering Chemistry (CY8151) :")
+    ge8151 = checkInputValue("ge8151", 3, "Problem Solving and Python Programming (GE8151) :")
+    ge8152 = checkInputValue("ge8152", 4, "Engineering Graphics (GE8152) :")
+    ge8161 = checkInputValue("ge8161", 2, "PSPP Laboratory (GE8161) :")
+    bs8161 = checkInputValue("bs8161", 2, "Physics and Chemistry Lab (BS8161) :")
 
     firstSemGpa = float((hs8151 + ma8151 + ph8151 + cy8151 + ge8151 + ge8161 + ge8152 + bs8161)) / 25
     print("\nYour First Semester GPA is ", round(firstSemGpa, 2))
@@ -109,85 +54,14 @@ def gpacalsem1():
 def gpacalsem2():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 2....\n")
 
-    while True:
-        try:
-            hs8251 = float(gradepoints(input("Enter Your Grade For Technical English (HS8251) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    hs8251 = hs8251 * 4
-
-    while True:
-        try:
-            ma8251 = float(gradepoints(input("Enter Your Grade For Engineering Mathematics - 2(MA8251) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ma8251 = ma8251 * 4
-
-    while True:
-        try:
-            ph8253 = float(gradepoints(input("Enter Your Grade For Physics For Electronics Engineering (PH8253) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ph8253 = ph8253 * 3
-
-    while True:
-        try:
-            be8254 = float(gradepoints(input("Enter Your Grade For Basic Electrical and Instrumentation Engineering (BE8254) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    be8254 = be8254 * 3
-
-    while True:
-        try:
-            ec8251 = float(gradepoints(input("Enter Your Grade For Circuit Analysis (EC8251) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8251 = ec8251 * 4
-
-    while True:
-        try:
-            ec8252 = float(gradepoints(input("Enter Your Grade For Electronic Devices (EC8252) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8252 = ec8252 * 3
-
-    while True:
-        try:
-            ec8261 = float(gradepoints(input("Enter Your Grade For Circuits and Devices Laboratory (GE8161) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8261 = ec8261 * 2
-
-    while True:
-        try:
-            ge8261 = float(gradepoints(input("Enter Your Grade For Engineering Practices Lab (BS8151) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ge8261 = ge8261 * 2
+    hs8251 = checkInputValue("hs8251", 4, "Technical English (HS8251) :")
+    ma8251 = checkInputValue("ma8251", 4, "Engineering Mathematics - 2(MA8251) :")
+    ph8253 = checkInputValue("ph8253", 3, "Physics For Electronics Engineering (PH8253) :")
+    be8254 = checkInputValue("be8254", 3, "Basic Electrical and Instrumentation Engineering (BE8254) :")
+    ec8251 = checkInputValue("ec8251", 4, "Circuit Analysis (EC8251) :")
+    ec8252 = checkInputValue("ec8252", 3, "Electronic Devices (EC8252) :")
+    ec8261 = checkInputValue("ec8261", 2, "Circuits and Devices Laboratory (GE8161) :")
+    ge8261 = checkInputValue("ge8261", 2, "Engineering Practices Lab (BS8151) :")
 
     secSemGpa = float((hs8251 + ma8251 + ph8253 + be8254 + ec8251 + ec8252 + ec8261 + ge8261)) / 25
     print("\nYour Second Semester GPA is ", round(secSemGpa, 2))
@@ -196,96 +70,15 @@ def gpacalsem2():
 
 def gpacalsem3():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 3....\n")
-
-    while True:
-        try:
-            ma8352 = float(gradepoints(input("Enter Your Grade For Linear Algebra and Partial Diff Equations (MA8352) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ma8352 = ma8352 * 4
-
-    while True:
-        try:
-            ec8393 = float(gradepoints(input("Enter Your Grade For Fundamentals of Data Structures In C (EC8393) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8393 = ec8393 * 3
-
-    while True:
-        try:
-            ec8351 = float(gradepoints(input("Enter Your Grade For Electronic Circuits-1 (EC8351) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8351 = ec8351 * 3
-
-    while True:
-        try:
-            ec8352 = float(gradepoints(input("Enter Your Grade For Signals And Systems(EC8352) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8352 = ec8352 * 4
-
-    while True:
-        try:
-            ec8392 = float(gradepoints(input("Enter Your Grade For Digital Electronics (EC8392) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8392 = ec8392 * 3
-
-    while True:
-        try:
-            ec8391 = float(gradepoints(input("Enter Your Grade For Control Systems Engineering (EC8391) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8391 = ec8391 * 3
-
-    while True:
-        try:
-            ec8381 = float(gradepoints(input("Enter Your Grade For FDS in C Laboratory (GE8161) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8381 = ec8381 * 2
-
-    while True:
-        try:
-            ec8361 = float(gradepoints(input("Enter Your Grade For Analog and Digital Circuits Lab (BS8151) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8361 = ec8361 * 2
-
-    while True:
-        try:
-            hs8381 = float(gradepoints(input("Enter Your Grade For Interpersonal Skills/Listening & Speaking (HS8381) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    hs8381 = hs8381 * 1
+    ma8352 = checkInputValue("ma8352", 4, "Linear Algebra and Partial Diff Equations (MA8352) :")
+    ec8393 = checkInputValue("ec8393", 3, "Fundamentals of Data Structures In C (EC8393) :")
+    ec8351 = checkInputValue("ec8351", 3, "Electronic Circuits-1 (EC8351) :")
+    ec8352 = checkInputValue("ec8351", 4, "Signals And Systems(EC8352) :")
+    ec8392 = checkInputValue("ec8392", 3, "Digital Electronics (EC8392) :")
+    ec8391 = checkInputValue("ec8391", 3, "Control Systems Engineering (EC8391) :")
+    ec8381 = checkInputValue("ec8381", 2, "FDS in C Laboratory (GE8161) :")
+    ec8361 = checkInputValue("ec8361", 2, "Analog and Digital Circuits Lab (BS8151) :")
+    hs8381 = checkInputValue("hs8381", 1, "Interpersonal Skills/Listening & Speaking (HS8381) :")
 
     thirdSemGpa = float((ma8352 + ec8393 + ec8351 + ec8352 + ec8392 + ec8391 + ec8381 + hs8381 + ec8361)) / 25
     print("\nYour Third Semester GPA is ", round(thirdSemGpa, 2))
@@ -294,85 +87,15 @@ def gpacalsem3():
 
 def gpacalsem4():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 4....\n")
-    while True:
-        try:
-            ma8451 = float(gradepoints(input("Enter Your Grade For Probability and Random Processes (MA8451) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ma8451 = ma8451 * 4
 
-    while True:
-        try:
-            ec8452 = float(gradepoints(input("Enter Your Grade For Electronic Circuits-2 (EC8452) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8452 = ec8452 * 3
-
-    while True:
-        try:
-            ec8491 = float(gradepoints(input("Enter Your Grade For Communication Theory (EC8491) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8491 = ec8491 * 3
-
-    while True:
-        try:
-            ec8451 = float(gradepoints(input("Enter Your Grade For Electromagnetic Fields (EC8451) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8451 = ec8451 * 4
-
-    while True:
-        try:
-            ec8453 = float(gradepoints(input("Enter Your Grade For Linear Integrated Circuits (EC8453) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8453 = ec8453 * 3
-
-    while True:
-        try:
-            ge8291 = float(gradepoints(input("Enter Your Grade For Environmental Science and Engineering (GE8291) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ge8291 = ge8291 * 3
-
-    while True:
-        try:
-            ec8461 = float(gradepoints(input("Enter Your Grade For Circuits Design and Simulation Laboratory (EC8461) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8461 = ec8461 * 2
-
-    while True:
-        try:
-            ec8462 = float(gradepoints(input("Enter Your Grade For Linear Integrated Circuits Laboratory (EC8462) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8462 = ec8462 * 2
+    ma8451 = checkInputValue("ma8451", 4, "Probability and Random Processes (MA8451) :")
+    ec8452 = checkInputValue("ec8452", 3, "Electronic Circuits-2 (EC8452) :")
+    ec8491 = checkInputValue("ec8491", 3, "Communication Theory (EC8491) :")
+    ec8451 = checkInputValue("ec8451", 4, "Electromagnetic Fields (EC8451) :")
+    ec8453 = checkInputValue("ec8453", 3, "Linear Integrated Circuits (EC8453) :")
+    ge8291 = checkInputValue("ge8291", 3, "Environmental Science and Engineering (GE8291) :")
+    ec8461 = checkInputValue("ec8461", 2, "Circuits Design and Simulation Laboratory (EC8461) :")
+    ec8462 = checkInputValue("ec8462", 2, "Linear Integrated Circuits Laboratory (EC8462) :")
 
     fourSemGpa = float((ma8451 + ec8452 + ec8491 + ec8451 + ec8453 + ge8291 + ec8461 + ec8462)) / 24
     print("\nYour Fourth Semester GPA is ", round(fourSemGpa, 2))
@@ -381,97 +104,15 @@ def gpacalsem4():
 
 def gpacalsem5():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 5....\n")
-
-    while True:
-        try:
-            ec8501 = float(gradepoints(input("Enter Your Grade For Digital Communication (EC8501) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8501 = ec8501 * 3
-
-
-    while True:
-        try:
-            ec8553 = float(gradepoints(input("Enter Your Grade For Discrete-Time Signal Processing (EC8553) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8553 = ec8553 * 4
-
-    while True:
-        try:
-            ec8552 = float(gradepoints(input("Enter Your Grade For Computer Architecture and Organization (EC8552 :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8552 = ec8552 * 3
-
-    while True:
-        try:
-            ec8551 = float(gradepoints(input("Enter Your Grade For Communication Networks (EC8551) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8551 = ec8551 * 3
-
-    while True:
-        try:
-            pe1 = float(gradepoints(input("Enter Your Grade For Professional Elective 1  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    pe1 = pe1 * 3
-
-    while True:
-        try:
-            oe1 = float(gradepoints(input("Enter Your Grade For Open Elective 1  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    oe1 = oe1 * 3
-
-    while True:
-        try:
-            ec8562 = float(gradepoints(input("Enter Your Grade For Digital Signal Processing Laboratory (EC8562) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8562 = ec8562 * 2
-
-    while True:
-        try:
-            ec8561 = float(gradepoints(input("Enter Your Grade For Communications Networks Laboratory (EC8561) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8561 = ec8561 * 2
-
-    while True:
-        try:
-            ec8563 = float(gradepoints(input("Enter Your Grade For Communications Networks Laboratory (EC8561) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8563 = ec8563 * 2
+    ec8501 = checkInputValue("ec8501", 3, "Digital Communication (EC8501) :")
+    ec8553 = checkInputValue("ec8553", 4, "Discrete-Time Signal Processing (EC8553) :")
+    ec8552 = checkInputValue("ec8552", 3, "Computer Architecture and Organization (EC8552 :")
+    ec8551 = checkInputValue("ec8551", 3, "Communication Networks (EC8551) :")
+    pe1 = checkInputValue("pe1", 3, "Professional Elective 1  :")
+    oe1 = checkInputValue("oe1", 3, "Open Elective 1  :")
+    ec8562 = checkInputValue("ec8562", 2, "Digital Signal Processing Laboratory (EC8562) :")
+    ec8561 = checkInputValue("ec8561", 2, "Communications System Laboratory (EC8561) :")
+    ec8563 = checkInputValue("ec8563", 2, "Communications Networks Laboratory (EC8561) :")
 
     fiveSemGpa = float((ec8501 + ec8553 + ec8552 + ec8551 + oe1 + pe1 + ec8562 + ec8563 + ec8561)) / 25
     print("\nYour Fifth Semester GPA is ", round(fiveSemGpa, 2))
@@ -480,95 +121,16 @@ def gpacalsem5():
 
 def gpacalsem6():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 6....\n")
-    while True:
-        try:
-            ec8691 = float(gradepoints(input("Enter Your Grade For Microprocessors and Microcontrollers (EC8691) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8691 = ec8691 * 3
 
-    while True:
-        try:
-            ec8095 = float(gradepoints(input("Enter Your Grade For VLSI Design (EC8095) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8095 = ec8095 * 3
-
-    while True:
-        try:
-            ec8652 = float(gradepoints(input("Enter Your Grade For Wireless Communication (EC8652) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8652 = ec8652 * 3
-
-    while True:
-        try:
-            mg8591 = float(gradepoints(input("Enter Your Grade For Principles of Management (MG8591) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    mg8591 = mg8591 * 3
-
-    while True:
-        try:
-            ec8651 = float(gradepoints(input("Enter Your Grade For Transmission Lines and RF Systems (EC8651)  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8651 = ec8651 * 3
-
-    while True:
-        try:
-            pe2 = float(gradepoints(input("Enter Your Grade For Professional Elective 2  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    pe2 = pe2 * 3
-
-    while True:
-        try:
-            ec8681 = float(gradepoints(input("Enter Your Grade For Microprocessors and Microcontrollers Laboratory (EC8681) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8681 = ec8681 * 2
-
-    while True:
-        try:
-            ec8661 = float(gradepoints(input("Enter Your Grade For VLSI Design Laboratory (EC8661) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8661 = ec8661 * 2
-
-    while True:
-        try:
-            ec8611 = float(gradepoints(input("Enter Your Grade For Technical Seminar (EC8611) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8611 = ec8611 * 1
+    ec8691 = checkInputValue("ec8691", 3, "Microprocessors and Microcontrollers (EC8691) :")
+    ec8095 = checkInputValue("ec8095", 3, "VLSI Design (EC8095) :")
+    ec8652 = checkInputValue("ec8652", 3, "Wireless Communication (EC8652) :")
+    mg8591 = checkInputValue("mg8591", 3, "Principles of Management (MG8591) :")
+    ec8651 = checkInputValue("ec8651", 3, "Transmission Lines and RF Systems (EC8651)  :")
+    pe2 = checkInputValue("pe2", 3, "Professional Elective 2  :")
+    ec8681 = checkInputValue("ec8681", 2, "MPMC Laboratory  :")
+    ec8661 = checkInputValue("ec8661", 2, "VLSI Design Laboratory (EC8661) :")
+    ec8611 = checkInputValue("ec8611", 1, "Technical Seminar (EC8611) :")
 
     sixSemGpa = float((ec8691 + ec8095 + ec8652 + mg8591 + ec8651 + pe2 + ec8681 + ec8661 + ec8611)) / 23
     print("\nYour Sixth Semester GPA is ", round(sixSemGpa, 2))
@@ -578,127 +140,29 @@ def gpacalsem6():
 def gpacalsem7():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 7....\n")
 
-    while True:
-        try:
-            ec8701 = float(gradepoints(input("Enter Your Grade For Antennas and Microwave (EC8701) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8701 = ec8701 * 3
-
-    while True:
-        try:
-            ec8751 = float(gradepoints(input("Enter Your Grade For Optical Communication (EC8751) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8751 = ec8751 * 3
-
-    while True:
-        try:
-            ec8791 = float(gradepoints(input("Enter Your Grade For Embedded and Real Time Systems (EC8791) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8791 = ec8791 * 3
-
-    while True:
-        try:
-            ec8702 = float(gradepoints(input("Enter Your Grade For Ad hoc and Wireless Sensor Networks (EC8702) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8702 = ec8702 * 3
-
-    while True:
-        try:
-            pe3 = float(gradepoints(input("Enter Your Grade For Professional Elective 2  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    pe3 = pe3 * 3
-
-    while True:
-        try:
-            oe2 = float(gradepoints(input("Enter Your Grade For Open Elective 2  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    oe2 = oe2 * 3
-
-    while True:
-        try:
-            ec8711 = float(gradepoints(input("Enter Your Grade For Embedded Laboratory (EC8711) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8711 = ec8711 * 2
-
-    while True:
-        try:
-            ec8761 = float(gradepoints(input("Enter Your Grade For Advanced Communication Laboratory (EC8561) :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8761 = ec8761 * 2
+    ec8701 = checkInputValue("ec8701", 3, "Antennas and Microwave (EC8701) :")
+    ec8751 = checkInputValue("ec8751", 3, "Optical Communication (EC8751) :")
+    ec8791 = checkInputValue("ec8791", 3, "Embedded and Real Time Systems (EC8791) :")
+    ec8702 = checkInputValue("ec8702", 3, "Ad hoc and Wireless Sensor Networks (EC8702) :")
+    pe3 = checkInputValue("pe3", 3, "Professional Elective 3  :")
+    oe2 = checkInputValue("oe2", 3, "Open Elective 2  :")
+    ec8711 = checkInputValue("ec8711", 2, "Embedded Laboratory (EC8711) :")
+    ec8761 = checkInputValue("ec8761", 2, "Advanced Communication Laboratory (EC8561) :")
 
     sevenSemGpa = float((ec8701 + ec8751 + ec8791 + ec8702 + pe3 + oe2 + ec8711 + ec8761)) / 22
     print("\nYour Seventh Semester GPA is ", round(sevenSemGpa, 2))
     return sevenSemGpa
 
-
 def gpacalsem8():
     print("\nCALCULATING YOUR GPA FOR SEMESTER 8....\n")
-    while True:
-        try:
-            pe4 = float(gradepoints(input("Enter Your Grade For Professional Elective 4  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    pe4 = pe4 * 3
 
-    while True:
-        try:
-            pe5 = float(gradepoints(input("Enter Your Grade For Professional Elective 5  :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    pe5 = pe5 * 3
-
-    while True:
-        try:
-            ec8761 = float(gradepoints(input("Enter Your Grade For Project Work :")))
-        except TypeError:
-            print("Invalid Input Please Enter Appropriate Value !!!")
-            continue
-        else:
-            break
-    ec8761 = ec8761 * 10
+    pe4 = checkInputValue("pe4", 3, "Professional Elective 4  :")
+    pe5 = checkInputValue("pe5", 3, "Professional Elective 5  :")
+    ec8761 = checkInputValue("ec8761", 10, "Project Work :")
 
     eightSemGpa = float((pe4 + pe5 + ec8761)) / 16
     print("\nYour Eighth Semester GPA is ", round(eightSemGpa, 2))
     return eightSemGpa
-
 
 def gpacalallsem():
     print("\nCALCULATING YOUR CGPA FOR ALL SEMESTERS ....\n")
@@ -714,7 +178,6 @@ def gpacalallsem():
     cgpa = (seme1 + seme2 + seme3 + seme4 + seme5 + seme6 + seme7 + seme8) / 8
     print("Your Cumulative Grade Point Average is ", round(cgpa, 2))
 
-
 print("* * * Anna University CGPA || GPA Calculator * * *\n")
 
 input("Press Enter to continue...")
@@ -727,7 +190,6 @@ while True:
         raise ValueError()
     except ValueError:
         print("Invalid Input Please Enter 0 Or 1 !!!")
-
 
 if gpaorcgpa == 0:
     while True:
@@ -781,6 +243,7 @@ if gpaorcgpa == 1:
 
     if untillsemx == 0:
         gpacalallsem()
+
     elif untillsemx == 1:
         print("\nCALCULATING YOUR CGPA FOR ONE SEMESTER ....\n")
         seme1 = gpacalsem1()
@@ -827,7 +290,7 @@ if gpaorcgpa == 1:
         cgpa = (seme1 + seme2 + seme3 + seme4 + seme5 + seme6) / 6
         print("\nYour Cumulative Grade Point Average is ", round(cgpa, 2))
     elif untillsemx == 7:
-        print("\nCALCULATING YOUR CGPA FOR ALL SEMESTERS ....\n")
+        print("\nCALCULATING YOUR CGPA FOR SEVEN SEMESTERS ....\n")
         seme1 = gpacalsem1()
         seme2 = gpacalsem2()
         seme3 = gpacalsem3()
@@ -842,6 +305,14 @@ if gpaorcgpa == 1:
 
 """ GPA = Sum of products of Grade Point of each subject in a semester and credits of
     corresponding subjects in a semester / Sum of credits in a semester"""
+
+
+
+
+
+
+
+
 
 
 
